@@ -67,3 +67,11 @@ docker run --rm \
 ### 📋 3. Input / Output Data Contract Enforcement
 * **Ingestion Portal:** Reads structured array strings sequentially from `/input/tasks.json` matching the `[{"task_id": "...", "prompt": "..."}]` schema layout.
 * **Egress Mapping:** Outputs valid, machine-parsable JSON matching the required schema to `/output/results.json` before signaling execution complete via a clean exit code (`exit 0`).
+
+---
+
+### 📂 Repository File Manifesto
+* **`main.py`**: The official production entrypoint for the Track 1 grading engine container. Runs 100% stateless and parses environment tokens dynamically at runtime.
+* **`router_agent.py`**: Core heuristic decision module processing localized byte-pair character mathematics.
+* **`config.py` & `token_utils.py`**: Environmental variable binding structures and telemetry tracking managers.
+* **`judge_simulation.py`**: A localized development testing sandbox. Bundles hardcoded parameters to simulate pipeline execution conditions on local workstations prior to building deployment manifests. (Ignored by production grading containers).

@@ -1,5 +1,15 @@
 # judge_simulation.py - Automated Mock Judging Dataset & Evaluator
 
+# ==============================================================================
+# ⚠️ LOCAL DEVELOPER TESTING HARNESS ONLY
+# ==============================================================================
+# NOTE: This file is a local testing sandbox utilized exclusively for development 
+# and verification on local machines. It is NOT part of the active production 
+# pipeline runtime. The official automated hackathon evaluation harness triggers 
+# main.py directly as its entrypoint, parsing variables dynamically from environment injections.
+# ==============================================================================
+
+
 from router_agent import evaluate_and_route
 
 # 1. Simulating the Judge's Hidden Dataset Evaluation Matrix.
