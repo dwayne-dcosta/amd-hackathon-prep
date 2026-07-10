@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="Instinct-Gate-icon-clean.png" width="120" alt="Instinct Gate Logo"/>
+</p>
+
+
 # 🛡️ Enterprise Token-Efficient Routing Hub
 **Track 1 Optimization Panel - Deployed on AMD Developer Cloud & Fireworks AI Infrastructure**
 
