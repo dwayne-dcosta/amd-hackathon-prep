@@ -1,14 +1,12 @@
 <p align="center">
-  <img src="Instinct-Gate-icon-clean.png" width="500" alt="Instinct Gate Logo"/>
+  <img src="Instinct-Gate-icon-clean-remove-bg.png" width="500" alt="Instinct Gate Logo"/>
 </p>
 
-
-# 🛡️ Enterprise Token-Efficient Routing Hub
-**Track 1 Optimization Panel - Deployed on AMD Developer Cloud & Fireworks AI Infrastructure**
+# 🛡️ Instinct Gate: Enterprise Token-Efficient Routing Hub
+**Multi-Architecture Optimization Panel - Deployed on AMD Developer Cloud & Fireworks AI Infrastructure**
 
 ## 💡 Project Overview
 An automated, containerized hybrid routing agent engineered to solve the commercial scalability and cost limitations of enterprise LLM deployments. By sitting between a zero-cost local inference node and high-performance remote AMD Instinct GPU clusters via Fireworks AI managed endpoints, the engine intelligently delegates incoming tasks based on real-time token footprint metrics and semantic reasoning triggers.
-
 
 ## 📊 Strategic Value Proposition & Business Model
 * **The Problem**: Relying entirely on heavy cloud APIs introduces unsustainable corporate cost scaling, token budget waste, and unmanaged latency spikes.
@@ -20,7 +18,7 @@ An automated, containerized hybrid routing agent engineered to solve the commerc
 ## 🛠️ Technology Stack & Architecture
 * **Core Engine**: Python 3.11, Tiktoken (`cl100k_base` tokenizer layout)
 * **Frontend Dashboard**: Streamlit (Native eye-friendly Dark-Mode Framework)
-* **Container Layer**: Docker (Multi-stage lightweight Linux configuration)
+* **Container Layer**: Docker (Advanced Multi-stage lightweight Linux configuration) 
 * **Target Compute Infrastructure**: AMD Instinct MI300X Hardware Nodes & Fireworks AI Managed Endpoints
 
 ---
@@ -50,10 +48,14 @@ Once initialized, navigate to `http://localhost:8501` in your web browser to int
 
 Instinct Gate is fully containerized and strictly adheres to the official AMD Hackathon Track 1 execution runtime contract. The container operating architecture is completely stateless, dynamic, and free of hardcoded variables.
 
-### 📦 1. Public Container Registry Ingestion
-The compiled cross-platform `linux/amd64` multi-stage build manifest is hosted publicly on the GitHub Container Registry. Verify or pull the production layers using an authenticated or anonymous socket pass:
+### 📦 1. Multi-Architecture Container Registry Ingestion
+Instinct Gate is compiled natively into a cross-platform, multi-architecture container manifest. The single image tag automatically pulls the correct architecture matching your target deployment node, supporting enterprise cloud clusters, Apple Silicon hardware, and localized edge devices simultaneously.
+
+* **Supported Platforms:** Intel Cloud (`linux/amd64`), Apple Silicon / Mobile (`linux/arm64`), and Legacy Desktop (`linux/386` x86).
+
+Pull the production layers from the GitHub Container Registry using the unified tag:
 ```bash
-docker pull ghcr.io/dwayne-dcosta/amd-hackathon-prep:latest
+docker pull ghcr.io/dwayne-dcosta/instinct-gate:latest
 ```
 
 ### 🚢 2. Running Local Grader Pipeline Simulation
@@ -64,9 +66,9 @@ docker run --rm \
   -v \$(pwd)/input:/input \
   -v \$(pwd)/output:/output \
   -e FIREWORKS_API_KEY="your_api_key_here" \
-  -e FIREWORKS_BASE_URL="https://api.fireworks.ai/inference/v1/" \
+  -e FIREWORKS_BASE_URL="https://fireworks.ai" \
   -e ALLOWED_MODELS="minimax-m3,gemma-4-31b-it" \
-  ghcr.io/dwayne-dcosta/amd-hackathon-prep:latest
+  ghcr.io/dwayne-dcosta/instinct-gate:latest
 ```
 
 ### 📋 3. Input / Output Data Contract Enforcement
@@ -94,7 +96,7 @@ If running on the Streamlit Cloud hub ecosystem, navigate straight to your App D
 ---
 
 ### 📂 Repository File Manifesto
-* **`main.py`**: The official production entrypoint for the Track 1 grading engine container. Runs 100% stateless and parses environment tokens dynamically at runtime.
+* **`app.py`**: The official production entrypoint for the Track 1 grading engine container. Built with dual-input fallback parsing (`tasks.json` + `sys.argv`), multi-task compliance mapping, and absolute-path output delivery.
 * **`router_agent.py`**: Core heuristic decision module processing localized byte-pair character mathematics.
 * **`config.py` & `token_utils.py`**: Environmental variable binding structures and telemetry tracking managers.
-* **`judge_simulation.py`**: A localized development testing sandbox. Bundles hardcoded parameters to simulate pipeline execution conditions on local workstations prior to building deployment manifests. (Ignored by production grading containers).
+* **`judge_simulation.py`**: A localized development testing sandbox. Bundles hardcoded parameters to simulate pipeline execution conditions on local workstations prior to building deployment manifests (ignored by production grading containers).
