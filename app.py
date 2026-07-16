@@ -48,6 +48,12 @@ if st.button("Analyze & Route Payload", type="primary"):
         # 🪝 INJECT THE LOGGING HOOK HERE TO CAPTURE UI INTERACTION TELEMETRY
         log_telemetry_metrics("UI_TEST", user_query, verdict)
 
+        # 📈 DYNAMICALLY UPDATE THE STREAMLIT SESSION STATE TRACKING BUFFERS
+        if "ui_hourly_spend" in st.session_state:
+            st.session_state.ui_hourly_spend += float(verdict.get("estimated_cost", 0.0))
+        if "ui_total_requests" in st.session_state:
+            st.session_state.ui_total_requests += 1
+
         st.write("----")
         st.subheader("Real-Time Diagnostic Verdict")
 
