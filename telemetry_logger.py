@@ -8,9 +8,16 @@ def log_telemetry_metrics(task_id, prompt, verdict):
     Appends a structured transaction row to a local CSV database file.
     Captures operational timestamps, token weights, destinations, and precise costs.
     """
-    # Ensure our data persists on the mounted /output directory layer
-    telemetry_dir = os.path.abspath("/output")
+        # Secure serverless sandboxed path fallback tracking
+    try:
+        telemetry_dir = os.path.abspath("/output")
+        os.makedirs(telemetry_dir, exist_ok=True)
+    except PermissionError:
+        telemetry_dir = os.path.abspath("./output")
+        os.makedirs(telemetry_dir, exist_ok=True)
+        
     telemetry_file_path = os.path.join(telemetry_dir, "telemetry_analytics.csv")
+
     
     # Establish explicit column layout matrix matching enterprise schema
     fieldnames = [

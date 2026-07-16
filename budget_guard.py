@@ -9,6 +9,9 @@ def is_budget_exceeded(max_hourly_budget=0.005):
     the trailing 60 minutes, and checks if it violates the safety budget cap.
     """
     telemetry_file_path = os.path.abspath("/output/telemetry_analytics.csv")
+    if not os.path.exists(telemetry_file_path):
+        telemetry_file_path = os.path.abspath("./output/telemetry_analytics.csv")
+
     
     # Safety pass: if no telemetry file exists yet, budget cannot be spent
     if not os.path.exists(telemetry_file_path):

@@ -165,12 +165,14 @@ if __name__ == "__main__":
     # ========================================================================
     # FILE SERIALIZATION LAYER (Guarantees Physical Data Delivery)
     # ========================================================================
+        # Secure serverless directory mapping
     try:
+        absolute_output_dir = os.path.abspath("/output")
         os.makedirs(absolute_output_dir, exist_ok=True)
-        with open(absolute_output_file, "w") as f:
-            json.dump(results_payload, f, indent=4)
-            f.flush()
-            os.fsync(f.fileno())
-    except Exception as io_error:
-        print(f"Fatal writing execution restriction: {str(io_error)}", file=sys.stderr)
-        traceback.print_exc(file=sys.stderr)
+    except PermissionError:
+        absolute_output_dir = os.path.abspath("./output")
+        os.makedirs(absolute_output_dir, exist_ok=True)
+
+    absolute_input_file = os.path.abspath("/input/tasks.json")
+    absolute_output_file = os.path.join(absolute_output_dir, "results.json")
+
