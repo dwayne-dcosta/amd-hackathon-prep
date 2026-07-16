@@ -10,7 +10,10 @@ def render_advanced_dashboard():
     and microsecond performance data onto the Streamlit canvas.
     """
     # 📁 Path Matrix Setup
+        # Secure serverless sandboxed path fallback tracking
     telemetry_file_path = os.path.abspath("/output/telemetry_analytics.csv")
+    if not os.path.exists(telemetry_file_path):
+        telemetry_file_path = os.path.abspath("./output/telemetry_analytics.csv")
     
     st.markdown("## 📊 System Monitoring & Governance Command Center")
     st.write("Real-time edge-to-cloud performance tracking and automated budget circuit breakers.")
