@@ -1,10 +1,16 @@
 import os
 import sys
 
-# Force append the absolute project directory path into python system paths
+# 🕒 1. Force append the absolute repository path into system lookup tracks
 root_path = os.path.dirname(os.path.abspath(__file__))
 if root_path not in sys.path:
     sys.path.insert(0, root_path)
+
+# 🧼 2. PURGE STALE CACHED MODULES FROM MEMORY TO DEFEAT STREAMLIT KEYERRORS
+stale_modules = ['telemetry_logger', 'budget_guard', 'cache_manager', 'router_agent']
+for module in stale_modules:
+    if module in sys.modules:
+        del sys.modules[module]
 
 # app.py - Streamlit User Interface Dashboard
 import streamlit as st
