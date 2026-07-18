@@ -53,17 +53,22 @@ def render_advanced_dashboard():
     if df is not None and not df.empty:
         total_requests = len(df)
         
-        # 🗓️ Convert strings to datetime objects, marking invalid text as NaT
+        # 🗓️ Ensure proper datetime formatting, forcing invalid text entries to NaT null values
         df['timestamp'] = pd.to_datetime(df['timestamp'], errors='coerce')
-        
-        # 🧼 DROP ALL ROWS THAT ARE NOT VALID DATETIME OBJECTS (Cleans out string headers)
         df = df.dropna(subset=['timestamp'])
+        
+        # 🧼 SECURE THE PRECISION COST COLUMN AGAINST STRING POLLUTION
+        # errors='coerce' turns text words into NaN, and fillna(0.0) replaces them with 0.0
+        df['precision_cost'] = pd.to_numeric(df['precision_cost'], errors='coerce').fillna(0.0)
         
         # Calculate trailing 60-minute spending metrics cleanly
         now = datetime.now(timezone.utc)
         one_hour_ago = now - timedelta(hours=1)
         hourly_df = df[df['timestamp'] >= one_hour_ago]
+        
+        # Type-secure extraction pass
         hourly_spend = float(hourly_df['precision_cost'].sum())
+
         
         # Extract operational cache and local edge tracking metrics
         cache_hits = len(df[df['reasoning_summary'].str.contains('CACHE|Cache', na=False) | (df['routing_target'] == 'LOCAL_CHEAP')])
