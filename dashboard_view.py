@@ -31,7 +31,7 @@ def render_advanced_dashboard():
     # 🔌 ALL INFRASTRUCTURE IMPORTS MUST LIVE INLINE HERE INSIDE THE FUNCTION BODY:
     from telemetry_logger import log_telemetry_metrics
     from budget_guard import is_budget_exceeded
-    from cache_manager import get_cached_response, set_cached_route
+    from cache_manager import get_cached_route, set_cached_route
 
     # 📁 Path Matrix Setup
     telemetry_file_path = os.path.abspath("/output/telemetry_analytics.csv")
