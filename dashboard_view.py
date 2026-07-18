@@ -18,7 +18,7 @@ import pandas as pd
 from datetime import datetime, timedelta, timezone
 
 # Import your decoupled modular infrastructure tracking parameters safely
-from telemetry_logger import log_telemetry
+from telemetry_logger import log_telemetry_metrics
 from budget_guard import is_budget_exceeded
 from cache_manager import get_cached_response
 
