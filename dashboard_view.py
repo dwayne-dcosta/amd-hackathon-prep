@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 def render_advanced_dashboard():
     """
@@ -54,7 +54,7 @@ def render_advanced_dashboard():
         total_requests = len(df)
         
         # Calculate trailing 60-minute spending metrics
-        now = datetime.utcnow()
+        now = datetime.now(timezone.utc)
         one_hour_ago = now - timedelta(hours=1)
         hourly_df = df[df['timestamp'] >= one_hour_ago]
         hourly_spend = float(hourly_df['precision_cost'].sum())
