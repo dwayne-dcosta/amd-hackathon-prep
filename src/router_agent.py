@@ -1,4 +1,14 @@
 # router_agent.py - Core Dynamic Routing Decision Logic
+import os
+import sys
+
+# 🕒 1. Force append the absolute parent root folder path straight into python system paths
+root_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+if root_path not in sys.path:
+    sys.path.insert(0, root_path)
+
+from config import TOKEN_LIMIT_LOCAL
+
 
 from config import TOKEN_LIMIT_LOCAL
 from token_utils import count_tokens, estimate_processing_cost

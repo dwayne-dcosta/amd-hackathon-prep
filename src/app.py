@@ -1,10 +1,11 @@
 import os
 import sys
 
-# 🕒 1. Force append the absolute repository path into system lookup tracks
-root_path = os.path.dirname(os.path.abspath(__file__))
+# 🕒 1. Force append the absolute parent root folder path straight into python system paths
+root_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 if root_path not in sys.path:
     sys.path.insert(0, root_path)
+
 
 # 🧼 2. PURGE STALE CACHED MODULES FROM MEMORY TO DEFEAT STREAMLIT KEYERRORS
 stale_modules = ['telemetry_logger', 'budget_guard', 'cache_manager', 'router_agent']
