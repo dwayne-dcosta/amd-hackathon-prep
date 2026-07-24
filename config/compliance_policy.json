@@ -1,0 +1,14 @@
+{
+  "governance_metadata": {
+    "framework_alignment": "UNESCO AI Ethics Guidelines & EU AI Act Compliance",
+    "enforcement_layer": "Containerized Network Sandbox Gateway"
+  },
+  "data_lifecycle_policy": {
+    "cache_retention_days": 60,
+    "cryptographic_purge_enabled": true
+  },
+  "safety_routing_policy": {
+    "moderation_threshold": 0.85,
+    "fallback_model_node": "AMD-Developer-Cloud-Local-Llama3-Aligned"
+  }
+}

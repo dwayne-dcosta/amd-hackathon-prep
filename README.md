@@ -3,10 +3,30 @@
 </p>
 
 # 🛡️ Instinct Gate: Enterprise Token-Efficient Routing Hub
-**Multi-Architecture Optimization Panel - Deployed on AMD Developer Cloud & Fireworks AI Infrastructure**
+**Multi-Architecture Optimization Panel & AI Governance Enforcement Gateway**  
+*Deployed on AMD Developer Cloud Architecture & Fireworks AI Infrastructure*
 
-## 💡 Project Overview
-An automated, containerized hybrid routing agent engineered to solve the commercial scalability and cost limitations of enterprise LLM deployments. By sitting between a zero-cost local inference node and high-performance remote AMD Instinct GPU clusters via Fireworks AI managed endpoints, the engine intelligently delegates incoming tasks based on real-time token footprint metrics and semantic reasoning triggers.
+[![Release Version](https://shields.io)](https://github.com)
+[![Compliance Framework](https://shields.io)](config/compliance_policy.json)
+
+---
+
+## 🏛️ Project & Governance Overview
+Instinct Gate is an institutional-grade, containerized AI infrastructure gateway engineered to enforce **data lifecycle governance, resource allocation bounds, and automated safety fallback routing** right at the network boundary [INDEX]. 
+
+By sitting between local, alignment-tuned open-source inference nodes running on your **AMD hardware runtime** and high-performance remote cloud clusters via Fireworks AI managed endpoints, the engine intelligently delegates incoming tasks based on real-time token footprint metrics, semantic reasoning triggers, and hardcoded compliance policies [INDEX].
+
+Instead of presenting an abstract AI wrapper app, Instinct Gate converts theoretical AI alignment principles—such as **UNESCO Ethics Guidelines** and **EU AI Act mandates**—into infrastructure-enforced software layers suitable for fellowships (like SPAR, One League, and AIAF) and enterprise software architectures alike [INDEX].
+
+---
+
+## 🏛️ Core Alignment Frameworks Enforced
+
+1. **Controlled Data Lifecycles (UNESCO AI Guidelines Art. 21):** Enforces strict temporal boundaries on data retention using an automated, cryptographic data-purging engine that scrubs log caches the second they cross corporate storage policies [INDEX].
+2. **System Robustness & Fail-Safe Redundancy (EU AI Act Title III):** Provides dynamic safety interceptors [INDEX]. If a prompt triggers content moderation alerts or downstream API failures occur, the gateway instantly routes traffic to an alignment-tuned model running locally on your hardware runtime [INDEX].
+3. **Observability & Auditing Ledger (Accountability Principle):** Outputs real-time JSON infrastructure telemetry (including token throughput, calculation outlays, and budget circuit breaker states) to feed persistent analytical dashboards [INDEX].
+
+---
 
 ## 📊 Strategic Value Proposition & Business Model
 * **The Problem**: Relying entirely on heavy cloud APIs introduces unsustainable corporate cost scaling, token budget waste, and unmanaged latency spikes.
@@ -15,11 +35,23 @@ An automated, containerized hybrid routing agent engineered to solve the commerc
 
 ---
 
-## 🛠️ Technology Stack & Architecture
-* **Core Engine**: Python 3.11, Tiktoken (`cl100k_base` tokenizer layout)
-* **Frontend Dashboard**: Streamlit (Native eye-friendly Dark-Mode Framework)
-* **Container Layer**: Docker (Advanced Multi-stage lightweight Linux configuration) 
-* **Target Compute Infrastructure**: AMD Instinct MI300X Hardware Nodes & Fireworks AI Managed Endpoints
+## 📂 Production-Grade Repository Topology
+
+```text
+instinct-gate/
+├── config/                  # Immutable Governance Policy Configuration
+│   └── compliance_policy.json # Hardcoded data boundaries & safety limits
+├── src/                     # Core Routing, Optimization, & Enforcement Engine
+│   ├── app.py               # Main System Gateway Core Entrypoint
+│   ├── compliance_engine.py # Asynchronous 60-Day Data Purging Module
+│   ├── safety_router.py     # Dynamic Fallback & Safety Interceptor Routing
+│   ├── rate_limiter.py      # Sliding-Window Log Engine Matrix
+│   ├── budget_guard.py      # Accumulator Loop & Spending Circuit Breaker
+│   ├── cache_manager.py     # Sub-Millisecond Route Serialization Cache
+│   └── judge_simulation.py  # Advanced Stress-Testing Benchmarking Suite
+└── telemetry/               # Logic Feeding Real-Time Audit Metrics
+    └── 1_Dashboard.py       # Live Visualization Analytics Canvas Engine
+```
 
 ---
 
@@ -93,10 +125,4 @@ LOCAL_EDGE_ENDPOINT = "your_local_inference_node_key_here"
 ### Cloud Deployment (Streamlit Community Cloud)
 If running on the Streamlit Cloud hub ecosystem, navigate straight to your App Dashboard -> **Settings** -> **Secrets**, and paste the exact same TOML parameters into the cloud configuration canvas workspace panel.
 
----
 
-### 📂 Repository File Manifesto
-* **`app.py`**: The official production entrypoint for the Track 1 grading engine container. Built with dual-input fallback parsing (`tasks.json` + `sys.argv`), multi-task compliance mapping, and absolute-path output delivery.
-* **`router_agent.py`**: Core heuristic decision module processing localized byte-pair character mathematics.
-* **`config.py` & `token_utils.py`**: Environmental variable binding structures and telemetry tracking managers.
-* **`judge_simulation.py`**: A localized development testing sandbox. Bundles hardcoded parameters to simulate pipeline execution conditions on local workstations prior to building deployment manifests (ignored by production grading containers).
