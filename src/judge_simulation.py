@@ -9,6 +9,19 @@
 # main.py directly as its entrypoint, parsing variables dynamically from environment injections.
 # ==============================================================================
 
+import os
+import sys
+
+# 🕒 Force append the absolute parent root folder path straight into python system paths
+root_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+if root_path not in sys.path:
+    sys.path.insert(0, root_path)
+
+# Your existing code continues below cleanly
+import time
+import random
+from src.rate_limiter import is_rate_limited
+from src.budget_guard import is_budget_exceeded
 
 from router_agent import evaluate_and_route
 
