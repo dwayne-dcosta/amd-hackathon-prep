@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # Core Infrastructure Compliance & Enforcement Gateway Gateway Node
+  gateway-core:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: instinct-gate-core-runtime
+    environment:
+      - FIREWORKS_API_KEY=${FIREWORKS_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    volumes:
+      - ./output:/output
+      - ./config:/config
+    ports:
+      - "8501:8501"
+    networks:
+      - compliance-sandbox-network
+    restart: unless-stopped
+
+  # Asynchronous Background Data Governance & Life-Cycle Purge Task Daemon
+  compliance-cron-agent:
+    image: instinct-gate-core-runtime
+    container_name: instinct-gate-compliance-daemon
+    volumes:
+      - ./output:/output
+      - ./config:/config
+    entrypoint: ["python", "src/compliance_engine.py"]
+    networks:
+      - compliance-sandbox-network
+    restart: on-failure
+
+networks:
+  compliance-sandbox-network:
+    driver: bridge
